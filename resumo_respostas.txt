@@ -1,0 +1,9 @@
+Pergunta 1 : como é feito um tênis?
+Resposta: "text": "Um tênis é feito com materiais como couro, camurça, tecido, borracha e plástico, que são cortados, costurados, colados e montados para criar o calçado final. \n" 
+
+Pergunta 2 : quanto tempo demora para o plástico se desintegrar?
+Resposta: "text": "O tempo para o plástico se desintegrar varia muito, de alguns anos para centenas de anos, dependendo do tipo de plástico e das condições ambientais. \n" 
+
+Pergunta 3 : quantos ossos tem um urso?
+Resposta: "text": "Um urso tem aproximadamente 37 ossos. \n" 
+

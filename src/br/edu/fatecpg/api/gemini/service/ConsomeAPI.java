@@ -7,6 +7,8 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class ConsomeAPI {
     private static final String API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=AIzaSyA0pdZdvIXa9pYicdzcwJVQxRo7xwkxJwo";
@@ -19,7 +21,7 @@ public class ConsomeAPI {
     }
 
     private static String gerarJsonRequest(String pergunta) {
-        String promptFormatado = "O Resultado gerado não deve possuir formatação ou caracteres especiais. Pergunta: " + pergunta;
+        String promptFormatado = "O Resultado gerado não deve possuir formatação ou caracteres especiais e precisa ser resumido em no máximo 1 linha, capture os pontos mais importantes. Pergunta: " + pergunta;
         return "{\"contents\":[{\"parts\":[{\"text\":\"" + promptFormatado + "\"}]}]}";
     }
 
@@ -46,5 +48,9 @@ public class ConsomeAPI {
             }
         }
         return resposta.toString();
+    }
+
+    public static void salvarResumoArquivo(String resumo, String caminho) throws IOException {
+        Files.write(Paths.get(caminho), resumo.getBytes());
     }
 }
